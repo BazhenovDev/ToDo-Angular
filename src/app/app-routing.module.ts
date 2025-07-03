@@ -12,12 +12,11 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('./views/pages/pages.module')
           .then(m => m.PagesModule)
-      },
-      {path: '**', redirectTo: '/tasks'},
+      }
     ]
   },
-  { path: '', redirectTo: '/tasks', pathMatch: 'full' },
-  {path: '**', redirectTo: '/tasks'},
+  { path: '', redirectTo: 'tasks', pathMatch: 'full' },
+  {path: '**', redirectTo: 'tasks'},
 ];
 
 @NgModule({

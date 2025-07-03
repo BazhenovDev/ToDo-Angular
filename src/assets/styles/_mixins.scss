@@ -5,6 +5,13 @@
   color: #1F1C1C;
 }
 
+@mixin hidden-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  scrollbar-width: none;
+}
+
 @mixin form-styles {
   .form {
     display: flex;
@@ -30,13 +37,13 @@
       font-size: 18px;
     }
     textarea {
+      @include hidden-scroll;
       min-width: 100%;
       max-width: 100%;
       height: 200px;
       max-height: 200px;
       font-size: 18px;
       padding: 20px;
-      overflow-x: scroll;
     }
     select {
       padding: 5px 10px;
@@ -65,3 +72,4 @@
     }
   }
 }
+

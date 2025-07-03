@@ -1,3 +1,5 @@
+@import "../../../../assets/styles/mixins";
+
 .viewing {
   padding: 50px 0 50px;
   .title {
@@ -44,12 +46,15 @@
     &-title {
       font-size: 24px;
       margin-right: 15px;
+
     }
     &-text {
+      @include hidden-scroll;
       font-size: 18px;
     }
   }
   &-description {
+    @include hidden-scroll;
     margin-bottom: 50px;
     &-title {
       font-size: 24px;

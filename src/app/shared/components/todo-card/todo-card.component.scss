@@ -1,13 +1,17 @@
+@import "../../../../assets/styles/mixins";
+
 .todo {
   &-card {
     border: 1px solid rgba(255,255,255, 0.1);
     border-radius: 15px;
     padding: 40px 20px 30px;
+    width: 380px;
     background-color: #FBCDB6;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
-    height: 300px;
+    height: 340px;
     transition: all .3s ease;
+    overflow: hidden;
     &-status {
       position: absolute;
       top: 10px;
@@ -27,12 +31,13 @@
       font-size: 24px;
       font-weight: bold;
       margin-bottom: 10px;
+      @include hidden-scroll;
+      max-height: 60px;
     }
     &-description {
       font-size: 18px;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      word-wrap: break-word;
+      @include hidden-scroll;
+      max-width: 100%;
       max-height: 150px;
     }
     &-actions {

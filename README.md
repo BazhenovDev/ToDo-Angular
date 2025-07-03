@@ -1,27 +1,83 @@
-# TodoAngular
+# ✅ ToDo Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+Простое приложение для управления задачами, построенное на Angular 15 с использованием IndexedDB для хранения данных.
 
-## Development server
+## 🔨 Технологии
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Angular 15**  
+- **TypeScript**  
+- **RxJS**  
+- **IndexedDB**  
 
-## Code scaffolding
+## 🧰 Основные возможности
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ✅ Создание, редактирование и удаление задач
+- ✅ Изменение статуса задач (Выполнено/Не выполнено) 
+- ✅ Поиск по задачам 
+- 📁 Локальное хранение данных (не требует сервера)
 
-## Build
+## ⚙️ Особенности архитектуры
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Reactive Forms
+- Router Module
+- Модульная структура
+- Lazy Loading 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🖼️ Скриншоты
 
-## Running end-to-end tests
+_Скриншоты интерфейса:_
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<!-- Пример: -->
+![Главная страница](https://github.com/BazhenovDev/ToDo-Angular/blob/main/src/assets/images/github-img/main1.png)
+![Главная страница 2](https://github.com/BazhenovDev/ToDo-Angular/blob/main/src/assets/images/github-img/main2.png)
+![Страница создания задачи](https://github.com/BazhenovDev/ToDo-Angular/blob/main/src/assets/images/github-img/create.png)
+![Страница редактирования задачи](https://github.com/BazhenovDev/ToDo-Angular/blob/main/src/assets/images/github-img/edit.png)
+![Страница информации о задаче](https://github.com/BazhenovDev/ToDo-Angular/blob/main/src/assets/images/github-img/about.png)
 
-## Further help
+## 🚀 Быстрый старт
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/bazhenovdev/todo-angular.git
+cd todo-angular
+
+# 2. Установить зависимости
+npm install
+
+# 3. Запустить проект
+ng serve -o
+
+# 4. Приложение будет доступно по адресу:
+http://localhost:4200/tasks
+```
+
+## 📁 Структура проекта
+
+```text
+src/
+├── app/
+│   ├── shared/                  # Общие модули и сервисы
+│   │   ├── components/          # Переиспользуемые компоненты
+│   │   ├── constants/           # Константы приложения
+│   │   ├── layout/              # Layout страницы
+│   │   ├── services/            # Общие сервисы
+│   │   └── shared.module.ts     # Модуль общих компонентов
+│   │
+│   └── views/                   # Основные view-компоненты
+│      ├── main/                 # Главная страница (/tasks)
+│      └── pages/                # Страницы pages модуля
+│          ├── create/           # Страница создания
+│          ├── edit/             # Страница редактирования
+│          └── viewing/          # Страница просмотра
+│   
+│
+├── assets/                      # Статистические файлы
+│   ├── fonts/                   # Шрифты
+│   ├── images/                  # Изображения
+│   └── styles/                  # Стили
+│
+├── ...                          # Остальные корневые файлы
+```
+
+

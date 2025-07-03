@@ -1,0 +1,30 @@
+<section class="viewing" *ngIf="todoItem">
+  <div class="container">
+    <h1 class="title">Информация о задаче</h1>
+    <article class="viewing-body">
+      <div class="viewing-head">
+        <div class="viewing-status">
+          <p class="viewing-status-title">Статус: </p>
+          <p class="viewing-status-text">{{ todoItem.statusText }}</p>
+        </div>
+        <a routerLink="/tasks/edit/{{todoItem.id}}" class="viewing-head-link">Редактировать</a>
+      </div>
+      <div class="viewing-info">
+        <p class="viewing-info-title">Задача:</p>
+        <p class="viewing-info-text">{{ todoItem.title }}</p>
+      </div>
+      <div class="viewing-description">
+        <p class="viewing-description-title">
+          Описание задачи:
+        </p>
+        <p class="viewing-description-text">
+          {{ todoItem.description ? todoItem.description : 'Задача без описания' }}
+        </p>
+      </div>
+      <div class="viewing-actions">
+        <button type="button" class="button button-details" routerLink="">Назад</button>
+        <button type="button" class="button button-delete" routerLink="" (click)="deleteTodo()">Удалить</button>
+      </div>
+    </article>
+  </div>
+</section>

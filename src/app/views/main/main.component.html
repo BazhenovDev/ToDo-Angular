@@ -1,0 +1,35 @@
+<section class="main">
+  <div class="container">
+    <div class="main-head">
+      <h1 class="title">Список задач</h1>
+      <div class="main-actions">
+        <button routerLink="create" class="button button-create button-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
+               viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                  d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+          </svg>
+          <span>Создать задачу</span>
+        </button>
+      </div>
+    </div>
+    <div class="todo-not-found" *ngIf="!todoList || todoList.length <= 0">
+      <p class="todo-not-found-text" *ngIf="!notFoundTodos">
+        Список задач пуст.
+        <span>Создайте свою первую задачу :)</span>
+      </p >
+      <p class="todo-not-found-text" *ngIf="notFoundTodos">
+        По вашему запросу ничего не найдено.
+        <span>Попробуйте изменить условия поиска.</span>
+      </p>
+      <svg width="666" height="91" viewBox="0 0 666 91" fill="none" xmlns="http://www.w3.org/2000/svg" *ngIf="!notFoundTodos">
+        <path d="M0.999985 54.0005C62.8858 60.7148 -35.7969 96.5247 98.0102 87.5723C265.269 76.3817 263.596 32.7384 335.518 37.2146C407.439 41.6908 293.703 71.9054 384.023 79.7388C456.279 86.0056 570.238 43.5559 618.185 21.5478C631.008 17.0715 657.324 7.89525 660 7" stroke="#363449" stroke-width="3"/>
+        <path d="M623 9.94131C625.105 11.1178 628.834 10.7295 634.842 9.30014C639.542 8.18193 647.637 6.57662 653.548 4.93349C659.459 3.29036 662.953 1.73742 663.804 2.03742C664.655 2.33742 662.759 4.53741 657.59 9.48837C652.422 14.4393 644.038 22.0746 639.42 26.3961C634.202 31.4941 633.086 33.2 632.38 34.8961C632.173 35.6863 632.273 36.3333 632.376 37" stroke="#363449" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+
+    </div>
+    <ul class="todo-items">
+      <todo-card-component *ngFor="let todoItem of todoList" [todoItem]="todoItem" (todoDeleteEmitter)="todoDeleted($event)"></todo-card-component>
+    </ul>
+  </div>
+</section>

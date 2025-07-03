@@ -1,0 +1,51 @@
+.todo {
+  &-card {
+    border: 1px solid rgba(255,255,255, 0.1);
+    border-radius: 15px;
+    padding: 40px 20px 30px;
+    background-color: #FBCDB6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    height: 300px;
+    transition: all .3s ease;
+    &-status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 1px solid #1a1a1a;
+      padding: 3px 6px;
+      border-radius: 10px;
+      &.not-completed {
+        background-color: #ffbe59;
+        border-color: #CE9371;
+      }
+      &.completed {
+        background-color: #8CFD76;
+      }
+    }
+    &-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &-description {
+      font-size: 18px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      word-wrap: break-word;
+      max-height: 150px;
+    }
+    &-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 6px 10px 14px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

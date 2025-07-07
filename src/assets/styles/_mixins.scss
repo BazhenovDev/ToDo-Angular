@@ -13,7 +13,6 @@
 }
 
 @mixin form-styles {
-  .form {
     display: flex;
     flex-direction: column;
     border: 1px solid rgba(255,255,255, 0.5);
@@ -70,6 +69,5 @@
       margin-top: 5px;
       color: #F44336;
     }
-  }
 }
 

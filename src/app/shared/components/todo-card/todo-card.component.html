@@ -2,7 +2,7 @@
   <article class="todo-card">
     <span class="todo-card-status" [class]="todoItem.status">{{todoItem.statusText}}</span>
     <h2 class="todo-card-title">{{ todoItem.title }}</h2>
-    <p class="todo-card-description">{{ todoItem.description ? todoItem.description : 'Задача без описания' }}</p>
+    <p class="todo-card-description">{{ todoItem.description || 'Задача без описания' }}</p>
     <div class="todo-card-actions">
       <button type="button" class="button button-details" routerLink="/tasks/{{todoItem.id}}">Подробнее</button>
       <button type="button" class="button button-delete" (click)="deleteTodo()">Удалить</button>

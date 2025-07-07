@@ -6,5 +6,7 @@
     text-align: center;
     margin-bottom: 50px;
   }
-  @include form-styles
+  .form {
+    @include form-styles;
+  }
 }

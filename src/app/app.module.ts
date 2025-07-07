@@ -8,27 +8,12 @@ import {LayoutComponent} from './shared/layout/layout.component';
 import {HeaderComponent} from './shared/layout/header/header.component';
 import {SharedModule} from "./shared/shared.module";
 import {CommonModule} from "@angular/common";
-
-import {DBConfig, NgxIndexedDBModule} from 'ngx-indexed-db';
 import {ReactiveFormsModule} from "@angular/forms";
 
-const dbConfig: DBConfig = {
-  name: 'TodoDB',
-  version: 1,
-  objectStoresMeta: [{
-    store: 'todos',
-    storeConfig: {
-      keyPath: 'id',
-      autoIncrement: true
-    },
-    storeSchema: [
-      { name: 'title', keypath: 'title', options: { unique: false } },
-      { name: 'status', keypath: 'status', options: { unique: false } },
-      { name: 'statusText', keypath: 'statusText', options: { unique: false } },
-      { name: 'description', keypath: 'description', options: { unique: false } }
-    ]
-  }]
-};
+import {dbConfig} from "./core/config/db-config";
+import {NgxIndexedDBModule} from 'ngx-indexed-db';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +24,6 @@ const dbConfig: DBConfig = {
   ],
   imports: [
     BrowserModule,
-    CommonModule,
     ReactiveFormsModule,
     NgxIndexedDBModule.forRoot(dbConfig),
     SharedModule,

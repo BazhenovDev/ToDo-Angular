@@ -14,7 +14,9 @@ import {RouterModule} from "@angular/router";
     RouterModule,
   ],
   exports: [
-    TodoCardComponent
+    TodoCardComponent,
+    CommonModule,
+    RouterModule,
   ]
 })
 export class SharedModule { }
